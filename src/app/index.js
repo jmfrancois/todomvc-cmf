@@ -8,17 +8,12 @@ import 'todomvc-common/base.css';
 import 'todomvc-common/base.js';
 import 'todomvc-app-css/index.css';
 import components from './components';
+import todos from './todos';
+import saga from './saga';
 
-/**
- * Initialize CMF
- * This will:
- * - Register your components in the CMF registry
- * - Register your action creators in CMF registry
- * - Setup redux store using reducer
- * - Fetch the settings
- * - render react-dom in the dom 'app' element
- */
 cmf.bootstrap({
 	components,
+	...todos,
+	saga,
 	settingsURL: '/settings.json',
 });
